@@ -54,7 +54,7 @@ jobs:
         run: npm install less -g
       
       - name: cd
-        run: ls -al
+        run: ls
 
       - name: Checkout
         uses: actions/checkout@v3
