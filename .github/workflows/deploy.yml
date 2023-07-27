@@ -11,11 +11,6 @@ on:
         default: './src/client/'
         type: string
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -50,14 +45,14 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: Install LESS
-        run: npm install less -g
-      
-      - name: cd
-        run: ls
-
       - name: Checkout
         uses: actions/checkout@v3
+      
+      - name: Install LESS
+        run: npm install less -g
+
+      - name: Transpile LESS files
+        run: lessc ./src/client/style/index.less ./src/client/style/index.css
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
