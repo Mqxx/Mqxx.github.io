@@ -50,6 +50,12 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
+      - name: Install LESS
+        run: npm install less -g
+      
+      - name: Transpile LESS files
+        run: lessc ./
+
       - name: Checkout
         uses: actions/checkout@v3
 
