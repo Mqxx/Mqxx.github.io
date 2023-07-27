@@ -53,8 +53,8 @@ jobs:
       - name: Install LESS
         run: npm install less -g
       
-      - name: Transpile LESS files
-        run: lessc ./
+      - name: cd
+        run: ls -al
 
       - name: Checkout
         uses: actions/checkout@v3
