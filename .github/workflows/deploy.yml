@@ -21,6 +21,10 @@ jobs:
     env:
       page-root-directory: './src/client'
 
+    permissions:
+      pages: write
+      id-token: write
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
